@@ -1,0 +1,146 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4f3;
+}
+
+/* Header Styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #095d74;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+.company-name {
+    font-size: 1.5em;
+    margin: 0 40px 0 0;
+    font-weight: bold;
+    font-style: italic;
+    transition: width 2s, height 2s, transform 2s;
+}
+
+.company-name:hover {
+    transform: rotate(360deg);
+  }
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    margin: 0 20px;
+}
+
+.search-bar input {
+    width: 70%;
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+}
+
+.search-bar button.search{
+    padding: 8px 16px;
+    margin-left: 10px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.search-bar button.search:hover {
+    background-color: #218838;
+}
+
+.cart {
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.cart:hover {
+    background-color: #173132;
+
+}
+
+/* Product Section Styles */
+.product-container {
+    display: flex;
+    max-width: 1400px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.product-image {
+    flex: 1;
+    padding: 20px;
+}
+
+.product-image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.product-details {
+    flex: 1;
+    padding: 20px;
+}
+
+.product-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.product-description {
+    font-size: 1em;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.product-price {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.add-to-cart {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart:hover {
+    background-color: #218838;
+}
+
+/* Footer Styles */
+.footer {
+    background-color:#095d74;;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 35px;
+}
+
+.footer-links a:hover {
+    text-decoration: underline;
+}

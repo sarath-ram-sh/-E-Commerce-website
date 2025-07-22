@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Product Page</title>
+    <link rel="stylesheet" href="styling.css">
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="company-name">Sara Cart</div>
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search here...">
+            <button class="search" onclick="searchProduct()">Search</button>
+        </div>
+        <div class="cart" onclick="viewCart()">🛒 Cart (<span id="cart-count">0</span>)</div>
+    </header>
+
+    <!-- Login Section -->
+    <div id="login-section">
+        <h2>Login</h2>
+        <input type="text" id="username" placeholder="Your Email"><br><br>
+        <input type="password" id="password" placeholder="Password"><br><br>
+        <button onclick="loginUser()">Login</button>
+    </div>
+
+    <!-- Product Section -->
+    <div class="product-container">
+        <div class="product">
+            <div class="product-image">
+                <img src="ps.webp" alt="ps 5">
+            </div>
+            <div class="product-details">
+                <h1 class="product-title">Sony PS5® Console - Two DualSense Wireless Controllers Bundle</h1>
+                <p class="product-description">
+                    Experience lightning fast loading with an ultra-high speed SSD, deeper immersion with support for haptic feedback, adaptive triggers, and 3D Audio2.
+                </p>
+                <p class="product-price">54989</p>
+                <button class="add-to-cart" onclick="addToCart('Sony PS5® Console', 54989)">Add to Cart</button>
+            </div>
+        </div>
+
+        <div class="product">
+            <div class="product-image">
+                <img src="hp.jpg" alt="hp laptop">
+            </div>
+            <div class="product-details">
+                <h1 class="product-title">HP 15, 13th Gen Intel Core i7-1355U</h1>
+                <p class="product-description">
+                    Intel Iris Xe Graphics, perfect for high-definition video playback, casual gaming and high Graphics.
+                </p>
+                <p class="product-price">60859</p>
+                <button class="add-to-cart" onclick="addToCart('HP Laptop', 60859)">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="footer-links">
+            <a href="connect.html">Connect With Us</a>
+            <a href="help.html">Help Center</a>
+        </div>
+    </footer>
+
+    <script>
+        let cart = [];
+
+        function loginUser() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            if(username && password) {
+                alert(`Welcome, ${username}`);
+            } else {
+                alert('Please enter both email and password.');
+            }
+        }
+
+        function addToCart(product, price) {
+            cart.push({ product, price });
+            document.getElementById('cart-count').innerText = cart.length;
+            alert(`${product} added to cart!`);
+        }
+
+        function viewCart() {
+            let cartDetails = cart.map(item => `${item.product}: ₹${item.price}`).join('\n');
+            alert(`Your cart:\n${cartDetails}`);
+        }
+
+        function searchProduct() {
+            const input = document.getElementById('search-input').value.toLowerCase();
+            const titles = document.querySelectorAll('.product-title');
+            titles.forEach(title => {
+                const product = title.closest('.product');
+                if (title.textContent.toLowerCase().includes(input)) {
+                    product.style.display = 'flex';
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+        }
+    </script>
+</body>
+</html>
